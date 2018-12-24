@@ -7,9 +7,9 @@ spring:
 server:
   port: 13000
 spring:
-  profile: dev #开发环境
+  profiles: dev #开发环境
   application:
-    name: microservicecloud-config-client
+    name: microservicecloud-config-dev
 eureka:
   client:
     service-url:
@@ -18,9 +18,9 @@ eureka:
 server:
   port: 13001
 spring:
-  profile: test #测试环境
+  profiles: test #测试环境
   application:
-    name: microservicecloud-config-client
+    name: microservicecloud-config-test
 eureka:
   client:
     service-url:
