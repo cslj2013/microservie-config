@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active:
+     - dev
+
+--- 
+server:
+  port: 8001
+spring:
+  profiles: dev #开发环境
+  application:
+    name: microservicecloud-dept-config-dev
+eureka:
+  client:  #客户端注册到eureka服务列表
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka, #设置eureka服务中心地址
+  instance:
+    prefer-ip-address: true #访问路径可以显示ip地址
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  
+---
+server:
+  port: 8002
+spring:
+  profiles: test #测试环境
+  application:
+    name: microservicecloud-dept-config-test
+eureka:
+  client:  #客户端注册到eureka服务列表
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka, #设置eureka服务中心地址
+  instance:
+    prefer-ip-address: true #访问路径可以显示ip地址
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+# 以utf-8格式保存
