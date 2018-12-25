@@ -5,17 +5,17 @@ spring:
 
 --- 
 server:
-  port: 8001
+  port: 8003
 spring:
   profiles: dev #开发环境
   application:
-    name: microservicecloud-dept-config-dev
+    name: microservicecloud-dept-dev
 eureka:
   client:  #客户端注册到eureka服务列表
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #设置eureka服务中心地址
   instance:
-    hostname: microservicecloud-dept-config-dev-8001
+    hostname: microservicecloud-dept-dev-8003
     #prefer-ip-address: true #访问路径可以显示ip地址
     #instance-id: ${spring.cloud.client.ip-address}:${server.port}
   
